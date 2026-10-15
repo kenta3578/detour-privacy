@@ -12,7 +12,7 @@
 
 | | |
 |---|---|
-| Mac アプリ | [Detour.dmg をダウンロード](https://github.com/kenta3578/detour-privacy/releases/latest/download/Detour.dmg)（Apple の公証済み） |
+| Mac アプリ | 準備中 |
 | Chrome / Arc 拡張機能 | [Chrome ウェブストアの Detour](https://chromewebstore.google.com/detail/bhdjgpdchikocailnddgmnkmappdgmck) |
 | iPhone アプリ | 準備中 |
 
