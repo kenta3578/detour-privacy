@@ -49,7 +49,7 @@ rm -f ~/Library/Application\ Support/Arc/User\ Data/NativeMessagingHosts/local.m
 
 ## プライバシーポリシー / Privacy Policy
 
-最終更新: 2026-10-15
+最終更新: 2026-10-18
 
 ### 日本語
 
@@ -63,10 +63,13 @@ Minai は、利用者が決めたサイトを、開けてよい時間の外で�
 | 開いているタブの URL（拡張機能） | 止めるサイトとの照合。照合後は保存しない | 保存しない |
 | ブラウザの拡張機能の設定と、動いているアプリ（Mac の見張り役） | Minai が有効か・Minai の入っていないブラウザが開いていないかの確認 | 保存しない（判定の記録として、ブラウザ名と理由だけを Mac の `/var/log/minai-watchdog.log` に残す） |
 | スクリーンタイムの許可（iPhone） | 止めるサイトを iPhone の Safari などで開けなくするため（Apple の Screen Time API） | iPhone の中。どのサイトを見たかはアプリから読めない |
+| 初回の案内の進み具合（iPhone） | 案内のどの手順で使うのをやめたかを数え、案内を直すため。送るのは手順の名前と「見た」「次へ進んだ」だけで、各手順につき 1 回だけ | TelemetryDeck（下の「送信・共有」） |
 
 #### 送信・共有
 
-Minai は、上記の情報を開発者のサーバーにも第三者にも送りません。開発者がこれらの情報を見ることはできません。Mac と iPhone の共有に使う iCloud は、利用者自身の Apple アカウントの中にあります。解析ツールや広告は使いません。外部のコードを読み込んで実行することもありません。
+Minai は、上の表の情報のうち、初回の案内の進み具合のほかは（止めるサイト・開けてよい時間・リダイレクト先・タブの URL・拡張機能の設定と動いているアプリ・スクリーンタイムの許可）、開発者のサーバーにも第三者にも送りません。開発者がこれらの情報を見ることはできません。Mac と iPhone の共有に使う iCloud は、利用者自身の Apple アカウントの中にあります。
+
+例外は iPhone アプリの初回の案内の進み具合だけで、解析サービスの [TelemetryDeck](https://telemetrydeck.com/privacy/) に送ります。送るのは手順の名前（例: 「止めるものを選ぶ」）と「見た」「次へ進んだ」のどちらかだけです。端末やあなたを見分ける ID、止めるもの、時間、アプリの使い方は送りません。全員が同じ値で送るので、だれの記録かは開発者にも分かりません。通信の仕組み上、通信元の IP アドレスと、通信に必ず付く言語の設定は TelemetryDeck に届きます（アプリや OS の版は送りません）。広告は使いません。外部のコードを読み込んで実行することもありません。
 
 #### 削除
 
@@ -92,10 +95,13 @@ Minai redirects sites the user has chosen to another URL outside the hours the u
 | URLs of open tabs (extension) | Matched against the sites to block; not stored | Not stored |
 | Browser extension settings and running apps (Mac watchdog) | Checking that Minai is enabled and that no browser without Minai is open | Not stored (only the browser name and reason are logged on the Mac in `/var/log/minai-watchdog.log`) |
 | Screen Time authorization (iPhone) | Blocking the chosen sites in Safari and other apps on the iPhone (Apple's Screen Time API) | On the iPhone. The app cannot read which sites were visited |
+| Progress through the first-run guide (iPhone) | Counting at which step people stop using the guide, to improve it. Only the step name and "shown" or "advanced" are sent, once per step | TelemetryDeck (see "Transmission and sharing") |
 
 #### Transmission and sharing
 
-Minai does not send any of this information to the developer's servers or to third parties, and the developer cannot see it. The iCloud storage used to share settings between the Mac and iPhone belongs to the user's own Apple Account. Minai uses no analytics, no advertising, and no remote code.
+Apart from progress through the first-run guide, Minai does not send any of the information in the table above (the sites to block, allowed hours, redirect URL, tab URLs, browser extension settings and running apps, or Screen Time authorization) to the developer's servers or to third parties, and the developer cannot see it. The iCloud storage used to share settings between the Mac and iPhone belongs to the user's own Apple Account.
+
+The only exception is progress through the iPhone app's first-run guide, which is sent to the analytics service [TelemetryDeck](https://telemetrydeck.com/privacy/). Only the step name (for example, "choose what to block") and either "shown" or "advanced" are sent. No ID that identifies your device or you, no blocked items, no hours, and no other usage is sent. Everyone sends the same value, so not even the developer can tell whose record it is. As with any network request, your IP address and the language setting that every request carries reach TelemetryDeck (the app and OS versions are not sent). Minai uses no advertising and no remote code.
 
 #### Deletion
 
